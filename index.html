@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 2 - Lista ToDo</title>
+  <style>
+    /* Minimalne style żeby było czytelnie */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 16px; max-width: 900px; margin: auto; }
+    ul { padding-left: 0; list-style: none; }
+    li { padding: 8px; margin-bottom: 6px; border: 1px solid #ddd; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .left { display:flex; align-items:center; gap:12px; flex:1; }
+    mark { background: yellow; }
+    .controls { display:flex; gap:8px; align-items:center; }
+    input[type="text"], input[type="datetime-local"] { padding:6px; border-radius:4px; border:1px solid #ccc; }
+    button { padding:6px 10px; border-radius:6px; border:1px solid #999; background:#f5f5f5; cursor:pointer; }
+    .muted { color:#666; font-size:0.9rem; margin-left:8px; }
+    .empty { color:#888; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Lista ToDo (LAB B)</h1>
+
+  <!-- wyszukiwanie -->
+  <div style="margin-bottom:12px;">
+    <input type="text" id="search" placeholder="Szukaj (min. 2 znaki)">
+  </div>
+
+  <ul id="todoList"></ul>
+
+  <!-- dodawanie -->
+  <div style="margin-top:16px; display:flex; gap:8px; align-items:center;">
+    <input type="text" id="taskInput" placeholder="Nowe zadanie (min. 3 znaki)" style="flex:1;">
+    <input type="datetime-local" id="taskDate">
+    <button id="addBtn">Dodaj</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
