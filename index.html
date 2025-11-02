@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Map Puzzle - LAB C</title>
+
+  <!-- Leaflet CSS (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Nasz CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <div id="map" class="map-container"></div>
+
+    <div class="controls">
+      <button id="getLocation">Moja lokalizacja</button>
+      <button id="saveButton">Pobierz mapę</button>
+      <span id="coords" class="coords"></span>
+    </div>
+
+    <canvas id="rasterMap" style="display:none;"></canvas>
+
+    <div class="puzzle-area">
+      <div id="drop-zone-container" class="drop-zone-container"></div>
+      <div id="puzzle-container" class="puzzle-container"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet + providers + leaflet-image -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-providers@1.13.0/leaflet-providers.js"></script>
+  <script src="https://unpkg.com/leaflet-image/leaflet-image.js"></script>
+
+  <!-- Nasz skrypt -->
+  <script src="app.js" defer></script>
+</body>
+</html>

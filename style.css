@@ -1,0 +1,179 @@
+/* ============================
+   STYL: Map Puzzle - motyw niebieski
+   ============================ */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+  color: #0d1b2a;
+}
+
+/* Główny kontener */
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffffdd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 16px 20px;
+}
+
+/* Nagłówki */
+h1, h2 {
+  color: #0a3d62;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+
+/* ============================
+   MAPA
+   ============================ */
+.map-container {
+  width: 720px;
+  height: 540px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #1976d2;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.3);
+}
+
+/* ============================
+   PRZYCISKI I KONTROLKI
+   ============================ */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+button {
+  background: linear-gradient(to bottom right, #2196f3, #1976d2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 3px 8px rgba(25,118,210,0.3);
+}
+
+.coords {
+  font-size: 0.95rem;
+  color: #0d47a1;
+  margin-left: 8px;
+}
+
+/* ============================
+   CANVAS
+   ============================ */
+#rasterMap {
+  display: block;
+  margin: 12px auto;
+  border: 2px solid #90caf9;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  max-width: 100%;
+}
+
+/* ============================
+   PUZZLE - kontenery
+   ============================ */
+.puzzle-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Dropzone grid (miejsce docelowe) */
+.drop-zone-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0;
+  border: 3px solid #64b5f6;
+  background: #e3f2fd;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* pojedyncze pole */
+.drop-zone {
+  border: 1px dashed #90caf9;
+  background-color: #fafcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.2s, outline 0.2s;
+}
+
+.drop-zone.drag-over {
+  outline: 3px solid rgba(33,150,243,0.35);
+  background-color: #e1f5fe;
+}
+
+/* ============================
+   PUZZLE ROZSYPANE
+   ============================ */
+.puzzle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  background: #fefefe;
+  border-radius: 10px;
+  border: 2px solid #bbdefb;
+  max-width: 720px;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* puzzel */
+.puzzle-piece {
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.puzzle-piece:active {
+  transform: scale(0.95);
+}
+
+/* Można dodać efekt dla małych puzzli */
+.puzzle-piece.small {
+  opacity: 0.9;
+}
+
+/* ============================
+   MEDIA QUERIES
+   ============================ */
+@media (max-width: 800px) {
+  .map-container {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .puzzle-container {
+    max-width: 90%;
+  }
+}
